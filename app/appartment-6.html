@@ -5,6 +5,7 @@
 	<title>Бронирование</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap-grid.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="libs/funcybox/jquery.fancybox.min.css">	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
 </head>
 <body class="header-bg">
@@ -15,6 +16,14 @@
 			<h1 class="header_title"><a href="index.html">Онлайн букинг</a></h1>
 			<h2 class="header_subtitle">Дома и апартаменты города Сочи</h2>			
 		</header>
+
+		<div class="admin-button-wrapper">
+			<a href="#" class="admin-button">
+				<img class="admin-button__icon" src="img/icons/icon-locked-padlock.svg" alt="icon">
+				Админ панель
+			</a>
+		</div>
+
 		
 		<main class="content-wrapper content-wrapper--rounded content-wrapper--shadow">
 
@@ -32,8 +41,19 @@
 					</div>
 					<div class="single__price">4 202 руб. <span>за сутки</span></div>
 					<div class="single-button-wrapper">
-						<a href="" class="button">Забронировать</a>
+						<a href="" class="button" id="btn-open-form">Забронировать</a>
 					</div>
+
+					<div class="booking-form-wrapper hidden">
+						<form class="form" action="">
+							<div class="form__title">Бронировать размещение</div>
+							<input class="form__input" type="text" placeholder="Фамилия Имя" required>
+							<input class="form__input" type="email" placeholder="E-mail" required>
+							<input class="form__input phone-mask" type="text" placeholder="Телефон" required>
+							<input class="button" type="submit" value="Забронировать">													
+						</form>
+					</div>
+					
 					<div class="single__description">
 					<p>Место для тех, кто устал от городской среды: уединенное, комфортабельное жилье для двоих.</p>
 					<p>Апартаменты 70 кв. м. занимают верхний этаж, имеют свою парковку, отдельный вход и большую террасу.</p>
@@ -41,26 +61,34 @@
 					</div>
 				</div>
 				<!-- // single -->
-				<!-- gallery -->				
-				<div class="gallery">
-					<div class="gallery__big">
-						<img src="img/mini/mini-1.jpg" alt="appartment photo">
-					</div>
-					<div class="gallery-mini-wrapper">
-						<div class="gallery__mini">
-							<img src="img/mini/mini-2.jpg" alt="appartment photo">
-						</div>
-					<div class="gallery-mini-wrapper">
-						<div class="gallery__mini">
-							<img src="img/mini/mini-3.jpg" alt="appartment photo">
-						</div>
-					<div class="gallery-mini-wrapper">
-						<div class="gallery__mini">
-							<img src="img/mini/mini-4.jpg" alt="appartment photo">
-						</div>												
-					</div>
-				</div>
-				<!-- // gallery -->					
+
+           <!-- gallery -->
+            <div class="gallery">
+                <div class="gallery__big">
+                	<a data-fancybox="gallery" href="img/big/big-1.webp">
+                    <img src="img/mini/mini-1.jpg" alt="Фото номера">
+                  </a>  
+                </div>
+                <div class="gallery-mini-wrapper">
+                    <div class="gallery__mini">
+                    	<a data-fancybox="gallery" href="img/big/big-2.webp">
+                        <img src="img/mini/mini-2.jpg" alt="Фото номера">
+                      </a>  
+                    </div>
+                    <div class="gallery__mini">
+                    	<a data-fancybox="gallery" href="img/big/big-3.webp">
+                        <img src="img/mini/mini-3.jpg" alt="Фото номера">
+                       </a>
+                    </div>
+                    <div class="gallery__mini">
+                    	<a data-fancybox="gallery" href="img/big/big-4.webp">
+                        <img src="img/mini/mini-4.jpg" alt="Фото номера">
+                      </a>
+                    </div>
+                </div>
+            </div>
+            <!-- // gallery -->	
+            	
 			</div>
 	<!-- // single-wrapper -->
 		</main>	
@@ -139,7 +167,10 @@
 	</footer>
 
 
-	
+	<script src="libs/jquery-3.3.1.min.js"></script>
+	<script src="libs/jquery-maskedinput/jquery.maskedinput.min.js"></script>
+	<script src="libs/funcybox/jquery.fancybox.min.js"></script>				
+	<script src="js/main.js"></script>	
 
 </body>
 </html>

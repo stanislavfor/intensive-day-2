@@ -16,6 +16,9 @@ gulp.task('server', ['styles'], function(){
 		server: { baseDir: './app/'}
 	});
 	watch('./app/**/*.html').on('change', browserSync.reload);
+	watch('./app/**/*.js').on('change', browserSync.reload);
+	//одним массивом watch(['./app/**/*.html', './app/**/*.js']).on('change', browserSync.reload);
+
 	watch('./app/less/**/*.less', function(){
 		gulp.start('styles');
 	});
